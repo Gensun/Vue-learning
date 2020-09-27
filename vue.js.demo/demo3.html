@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo3 </title>
+		<script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="item, index in items" :key='index'>
+					{{ index }} = {{ item }}
+				</li>
+			</ul>
+
+			<button v-on:click="greet(1,$event)">{{ count }}</button>
+			
+			<button v-on:dblclick="doubleClick">double Click</button>
+
+		</div>
+
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					items: ['123', '234'],
+					count: 0,
+				},
+				methods: {
+					greet: function(str, event) {
+						this.count = this.count + str
+						console.log(event)
+					},
+					doubleClick: function(){
+						console.log('double click')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
