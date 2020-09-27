@@ -24,14 +24,12 @@ module.exports = env => {
     )
   }
   return {
-    entry: {
-      app: './app/js/main.js'
-    },
+    entry:['./app/js/viewport.js','./app/js/main.js'],
     devServer: {
       contentBase: './dist',
       hot: true,
       compress: true,
-      port: 9004,
+      port: 9000,
       clientLogLevel: "none",
       quiet: true
     },
